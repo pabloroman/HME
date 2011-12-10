@@ -1,0 +1,21 @@
+html, body, ul, h1, h2, h3, h4, h5, h6, p, fieldset { margin: 0; padding: 0; }
+html, body { overflow: initial; }
+html { -webkit-font-smoothing: subpixel-antialiased; -webkit-user-select: none; cursor: default; font: 14px/18px "Helvetica Neue", "Helvetica", "Arial", sans-serif; height: 100%; background: #E8EAE3; }
+ul, ol { list-style: none; }
+:focus { outline: initial; }
+button, input, textarea { -webkit-appearance: none; font-family: inherit; font-size: 12px; }
+fieldset { border: 0; }
+
+body { background: #E8EAE3; color: #333; }
+
+header { min-height: 50px; background: #0B121E; box-shadow: #0B121E -1px 3px 4px -3px; position: relative; }
+header h1 { width: 260px; height: 50px; display: block; text-indent: -9999px; background: url(../images/hme_logo.png) no-repeat 0 0; margin-left: 20px; }
+
+#content { padding: 40px; }
+
+#content section { padding: 10px; border-radius: 5px; background: #fff; overflow: hidden; }
+#albums ul li { float: left; margin: 20px; width: 150px; }
+#albums ul li .spotifyAlbum .image { display: block; width: 150px; height: 150px; }
+#albums ul li .detail { text-align: center; overflow: hidden; margin-top: 10px; }
+#albums ul li .detail .name { color: #333; font-weight: bold; text-decoration: none; }
+#albums ul li .detail .artist { color: #666; text-decoration: none; }
