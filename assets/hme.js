@@ -12,11 +12,6 @@ $.mustache = function(template, view, partials) {
 var HME = {
 
     sp: getSpotifyApi(1),
-/*
-    HME.Spotify = {
-        Api: sp,
-    };
-*/
     
     init: function() {
     
@@ -25,30 +20,6 @@ var HME = {
 		
       $.get("http://heavymetalencyclopedia.com/albums.json", function(data) {
         $("#albums").append(HME.albumListView(data));
-/*        
-        $.each(data, function(index, obj) {
-          $("#albums").append(obj.release.name);
-          if(obj.release.spotify_link != null) {
-            var album = HME.model.Album.fromURI(obj.release.spotify_link).get('image');
-            
-            console.log(album);
-            var image = album.get('image');
-            console.log(image);
-            console.log(album.data);
-            //var cover = HME.view.Image(SPAlbum);
-
-            HME.sp.core.getMetadata(obj.release.spotify_link, {
-      				onSuccess: function(result) {
-      					console.log(cover);
-      				},
-      				onFailure: function(result) {
-      					console.log(result);
-      				}
-      			});
-
-          }
-        });
-*/
       },"json");
     },
     
@@ -71,29 +42,13 @@ var HME = {
   		var deferred = $.Deferred();
   		$.when(HME.getMetadata(album.release.spotify_link))
   			.done(function(result) {
-  				if(result && typeof result.cover === "string") {
-/*
-  					var images = model.get('images');
-  					
-  					images.spotify = result.cover;
-  					model.set({images: images});
-*/  					
-  				}
   				deferred.resolve(result);
   			})
   			.fail(function(result) {
   				deferred.reject();
   			});
   		
-  		return deferred.promise();
-
-/*
-      HME.model.Album.fromURI(album.release.spotify_link, function(data) {
-        console.log(data);
-         return $.mustache($('#tmpl-albumItem').html(), data);
-      });
-*/
-     
+  		return deferred.promise(); 
     },
 
   	getMetadata: function(uri) {
