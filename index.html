@@ -11,7 +11,8 @@
 			<h1>Heavy Metal Encyclopedia</h1>
 		</header>
 		<div id="content">
-			<section id="albums"></section>
+			<section id="albums">
+			</section>
 		</content>
 		
 		<script src="assets/mustache.js"></script>
@@ -20,15 +21,13 @@
 		
 
     <script type="text/html" id="tmpl-albumItem">
-      <li>
     		<div class="spotifyAlbum">
     			<a href="{{uri}}" class="inset image playable" style="background-image: url('{{cover}}')"></a>
     		</div>
-            <div class="detail">
-    			<a href="{{uri}}" class="name">{{name}}</a><br />
-            	<a href="{{artist.uri}}" class="artist">{{artist.name}}</a>
+        <div class="detail">
+    			<a href="{{uri}}" class="name">{{name}}</a>
+          <a href="{{artist.uri}}" class="artist">{{artist.name}}</a>
     		</div>
-  		</li>
     </script>
     
 	</body>

@@ -17,5 +17,7 @@ header h1 { width: 260px; height: 50px; display: block; text-indent: -9999px; ba
 #albums ul li { float: left; margin: 20px; width: 150px; }
 #albums ul li .spotifyAlbum .image { display: block; width: 150px; height: 150px; }
 #albums ul li .detail { text-align: center; overflow: hidden; margin-top: 10px; }
-#albums ul li .detail .name { color: #333; font-weight: bold; text-decoration: none; }
-#albums ul li .detail .artist { color: #666; text-decoration: none; }
+#albums ul li .detail .name { color: #333; font-weight: bold; }
+#albums ul li .detail .artist { color: #666; }
+#albums ul li .detail a { text-decoration: none; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; display: block; }
+#albums ul li .detail a:hover { text-decoration: underline; }
