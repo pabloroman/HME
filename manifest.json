@@ -1,16 +1,27 @@
 {
 	"BundleType": "Application",
+	"BundleVersion": "1.0",
+	"AppDescription": {
+    "en": "The most complete library of Heavy Metal music for Spotify."
+	},
 	"AppIcon": {
-		"36x18": "images/icon.png"
+		"36x18": "images/icon_18.png",
+		"32x32": "images/icon_32.png",
+		"64x64": "images/icon_64.png",
+		"128x128": "images/icon_128.png",
+		"256x256": "images/icon_256.png"
 	},
 	"AppName": {
 		"en": "Heavy Metal Encyclopedia"
 	},
+	"AppURL": "http://heavymetalencyclopedia.com/",
+	"RequiredInterface": 1,
+	
 	"SupportedLanguages": [
 		"en"
 	],
 	"RequiredPermissions": [
-	  "http://heavymetalencyclopedia.com",
-		"http://assets.heavymetalencyclopedia.com"
-	]
+	  "http://heavymetalencyclopedia.com"
+	],
+	"VendorIdentifier": "com.hme"
 }
