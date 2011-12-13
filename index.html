@@ -21,13 +21,16 @@
 		
 
     <script type="text/html" id="tmpl-albumItem">
-    		<div class="spotifyAlbum">
+      <div class="album_wrapper">
+    		<div class="cover">
     			<a href="{{uri}}" class="inset image playable" style="background-image: url('{{cover}}')"></a>
+    			<a class="player"></a>
     		</div>
         <div class="detail">
     			<a href="{{uri}}" class="name">{{name}}</a>
           <a href="{{artist.uri}}" class="artist">{{artist.name}}</a>
     		</div>
+      </div>
     </script>
     
 	</body>

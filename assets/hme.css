@@ -13,11 +13,26 @@ header h1 { width: 260px; height: 50px; display: block; text-indent: -9999px; ba
 
 #content { padding: 40px; }
 
-#content section { padding: 10px; border-radius: 5px; background: #fff; overflow: hidden; }
-#albums ul li { float: left; margin: 20px; width: 150px; }
-#albums ul li .spotifyAlbum .image { display: block; width: 150px; height: 150px; }
-#albums ul li .detail { text-align: center; overflow: hidden; margin-top: 10px; }
-#albums ul li .detail .name { color: #333; font-weight: bold; }
-#albums ul li .detail .artist { color: #666; }
-#albums ul li .detail a { text-decoration: none; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; display: block; }
-#albums ul li .detail a:hover { text-decoration: underline; }
+#content section { padding: 40px 10px; border-radius: 5px; background: #fff; overflow: hidden; }
+
+#albums { text-align: center; }
+#albums ul li { display: inline-block; }
+
+.album_wrapper { margin: 10px 20px; width: 150px; }
+.album_wrapper .cover { position: relative; }
+.album_wrapper .cover .image { display: block; width: 150px; height: 150px; }
+.album_wrapper .detail { text-align: center; overflow: hidden; margin-top: 10px; }
+.album_wrapper .detail .name { color: #333; font-weight: bold; }
+.album_wrapper .detail .artist { color: #666; }
+.album_wrapper .detail a { text-decoration: none; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; display: block; }
+.album_wrapper .detail a:hover { text-decoration: underline; }
+
+.album_wrapper .player { background: transparent url(../images/player.png) no-repeat 0 0; width: 43px; height: 43px; display: block; position: absolute; right: 4px; bottom: 4px; }
+.album_wrapper .player.play { background-position: 0 0; }
+.album_wrapper .player.play:hover { background-position: -43px 0; }
+.album_wrapper .player.play:active { background-position: -86px 0; }
+.album_wrapper .player.pause { background-position: 0 -43px; }
+.album_wrapper .player.pause:hover { background-position: -43px -43px; }
+.album_wrapper .player.pause:active { background-position: -86px -43px; }
+.album_wrapper .player.playing { background-position: 0 -86px; }
+.album_wrapper .player.paused { background-position: -43px -86px; }
