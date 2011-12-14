@@ -11,11 +11,16 @@ body { background: #E8EAE3; color: #333; }
 header { min-height: 50px; background: #0B121E; box-shadow: #0B121E -1px 3px 4px -3px; position: relative; }
 header h1 { width: 260px; height: 50px; display: block; text-indent: -9999px; background: url(../images/hme_logo.png) no-repeat 0 0; margin-left: 20px; }
 
+nav#genre_selector { text-align: center; margin-bottom: 20px; }
+nav#genre_selector li { display: inline-block; }
+nav#genre_selector li a { display: block; padding: 3px 9px; background: #D7D8D4; border-radius: 3px; font-size: 13px; color: #333; text-shadow: 1px 0 0 white; box-shadow: 0px 2px 6px #999; border: 1px solid #BBB; margin: 0px 10px; }
+
 #content { padding: 40px; }
 
 #content section { padding: 40px 10px; border-radius: 5px; background: #fff; overflow: hidden; }
 
 #albums { text-align: center; }
+#albums h2 { font-size: 22px; margin-bottom: 30px; }
 #albums ul li { display: inline-block; }
 
 .album_wrapper { margin: 10px 20px; width: 150px; }

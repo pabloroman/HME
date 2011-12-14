@@ -21,7 +21,12 @@ $(document).ready(function() {
   		if(HME.currentPage > 5) {
   			return false;
   		}
-  		HME.popularAlbums();
+  		if(HME.current_view == "home") {
+  		  HME.popularAlbums();
+  		} else {
+  		  var genreTokens = HME.currentView.split("_");
+  		  HME.albumsByGenre(genreTokens[1]);
+  		}
   	}
   });
 });
@@ -32,23 +37,40 @@ var HME = {
     // Global variables
     sp: getSpotifyApi(1),
     currentPage: 1,
+    currentView: "home",
     
     init: function() {
       HME.model = HME.sp.require("sp://import/scripts/api/models");
       HME.view = HME.sp.require("sp://import/scripts/api/views");	
+      $("#albums").append("<h2>Top Heavy Metal albums overall</h2>");
       $("#albums").append("<ul></ul>");	
+      HME.currentView = "home";
       HME.popularAlbums();
 
     	HME.sp.trackPlayer.addEventListener("playerStateChanged", function (event) {
         var lalal = HME.sp.trackPlayer.getIsPlaying();
       });
-	
+
+      $("#genre_selector").find('a').click(function() { 
+        var genre_id = $(this).data('genre');
+        HME.currentPage = 1;
+        $("#albums h2").html("Top "+$(this).html()+" albums");
+        $("#albums ul").empty();
+        HME.albumsByGenre(genre_id);
+        HME.currentView = "genre_"+genre_id;
+      });
     },
     
     popularAlbums: function() {
       $.retrieveJSON("http://heavymetalencyclopedia.com/albums/page/"+HME.currentPage+".json", function(data) {
         HME.albumListView(data);
       });    
+    },
+    
+    albumsByGenre: function(genre_id) {
+      $.retrieveJSON("http://heavymetalencyclopedia.com/genres/"+genre_id+"/page/"+HME.currentPage+".json", function(data) {
+        HME.albumListView(data[1]);
+      });     
     },
     
     albumListView: function(albumList) {
