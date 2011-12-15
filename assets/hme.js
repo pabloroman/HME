@@ -21,7 +21,7 @@ $(document).ready(function() {
   		if(HME.currentPage > 5) {
   			return false;
   		}
-  		if(HME.current_view == "home") {
+  		if(HME.currentView == "home") {
   		  HME.popularAlbums();
   		} else {
   		  var genreTokens = HME.currentView.split("_");
@@ -51,7 +51,7 @@ var HME = {
         var lalal = HME.sp.trackPlayer.getIsPlaying();
       });
 
-      $("#genre_selector").find('a').click(function() { 
+      $("#genre_selector").find('button').click(function() { 
         var genre_id = $(this).data('genre');
         HME.currentPage = 1;
         $("#albums h2").html("Top "+$(this).html()+" albums");
